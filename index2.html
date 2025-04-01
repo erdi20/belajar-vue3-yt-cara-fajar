@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="tampil">{{ message }}</div>
+      <div v-else>tidak tampil</div>
+
+      <div v-if="nilai >= 9">bagus</div>
+      <div v-else-if="nilai <= 8 && nilai >6">cukup</div>
+      <div v-else>kurang</div>
+      <div class="">---------------------------</div>
+      <div v-show="stateLampu">lampu hidup</div>
+      <button @click="toogleLampu">saklar lampu</button>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      createApp({
+        data() {
+          return {
+            message: "Hello, Vue!",
+            tampil: false,
+            nilai: 1,
+            // ----------------------------------------------------------------
+            stateLampu: false,
+          };
+        },
+        methods: {
+          toogleLampu() {
+            this.stateLampu = !this.stateLampu;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
