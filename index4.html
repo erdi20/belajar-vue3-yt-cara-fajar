@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <button @click="count--">-</button>
+      {{ count }}
+      <button @click="count++">+</button> -->
+      <div>---------------</div>
+      <br />
+      <button @click="tambah">-</button>
+      {{ count }}
+      <button @click="kurang">+</button>
+      <div>---------------</div>
+      <br />
+      <button @click="sayHello('halooo')">halo</button>
+      <div>---------------</div>
+      <br />
+      <input type="submit" @keydown.enter="sayHello('halooo')" />
+      <div>---------------</div>
+      <br />
+      <form action="z.html" @submit.prevent method="post">
+        <input type="text">
+        <input type="submit" value="submit">
+      </form>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      createApp({
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        methods: {
+          tambah() {
+            this.count++;
+          },
+          kurang() {
+            this.count--;
+          },
+          sayHello(a) {
+            alert(a);
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
