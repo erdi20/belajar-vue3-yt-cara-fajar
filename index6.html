@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="">
+        <label for="name">nama</label>
+        <br />
+        <input type="text" v-model="name" placeholder="nama" />
+      </div>
+      <div class="">
+        <label for="">alamat</label>
+        <br />
+        <textarea type="text" cols="20" rows="0" v-model="address"></textarea>
+      </div>
+      <div class="">
+        <label for="">gender</label>
+        <br />
+        <input type="radio" v-model="gender" value="pria" id="" />pria <input type="radio" v-model="gender" value="wanita" id="" />wanita
+      </div>
+      <div class="">
+        <label for="">hobby</label>
+        <br />
+        <input type="checkbox" v-model="hobby" value=" basket" id="" /> basketball <input type="checkbox" v-model="hobby" value=" besbol" id="" /> besbol
+      </div>
+      <div class="">
+        <select v-model="role" id="">
+          <option value="" disabled>--pilih--</option>
+          <option value="fe" >fe</option>
+          <option value="be" >be</option>
+          <option value="ft" >ft</option>
+        </select>
+      </div>
+      <p>nama : {{ name }}</p>
+      <p>alamat : {{ address }}</p>
+      <p>gender : {{ gender }}</p>
+      <p>role : {{ role }}</p>
+      <p>
+        hobby :
+        <span v-if=" hobby.length > 0 ">
+          <ul v-for="i in hobby">
+            <li>{{ i }}</li>
+          </ul>
+        </span>
+      </p>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      createApp({
+        data() {
+          return {
+            name: "",
+            address: "",
+            gender: "",
+            role: "",
+            hobby: [],
+          };
+        },
+        methods: {},
+      }).mount("#app");
+    </script>
+  </body>
+</html>
