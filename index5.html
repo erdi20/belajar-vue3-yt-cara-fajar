@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <a :href="url">google</a>
+      <div class="">------------------------</div>
+      <br />
+      <div>
+        nama: {{ person.name }}
+        <br />
+        umur:{{ person.age }}
+        <br />
+        <img :src="person.img" :style="{width:responsive}" :alt="'img' +person.name" :title="'img' +person.name" />
+      </div>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      createApp({
+        data() {
+          return {
+            url: "http://google.com",
+            person: {
+              name: "John Doe",
+              age: 30,
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLA994hpL3PMmq0scCuWOu0LGsjef49dyXVg&s",
+            },
+            responsive: "300px",
+          };
+        },
+        methods: {},
+      }).mount("#app");
+    </script>
+  </body>
+</html>
