@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <input type="text" value="a" ref="inputan"/> -->
+      <br />
+      -----------------
+      <br />
+      <input type="text" name="" :value="count" ref="hitung" />
+      <button @click="count++">tambah</button>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      createApp({
+        data() {
+          return {
+            message: "hello",
+            count: 0,
+          };
+        },
+        beforeCreate() {
+          console.log(`beforeCreate: ${this.message}`);
+        },
+        created() {
+          console.log(`created: ${this.message}`);
+        },
+        // beforeMount() {
+        //   // console.log(`beforeMount: ${this.$ref.inputan}`);
+        // },
+        // mounted() {
+        //   console.log(`mounted: ${this.$ref.inputan.value}`);
+        // },
+        beforeUpdate() {
+          console.log(`before update:${this.$refs.hitung.value}`);
+        },
+     
+        updated() {
+          console.log(`update:${this.$refs.hitung.value}`);
+        },
+        methods: {},
+      }).mount("#app");
+    </script>
+  </body>
+</html>
